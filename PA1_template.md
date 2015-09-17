@@ -90,7 +90,7 @@ number_of_missing_values
 ## [1] 2304
 ```
 
-#### New dataset: Replace missing values with the mean for that interval 
+#### New dataset: Replace missing values with the mean over all days for that interval. I do this by merging in the dataset from the previous step, and replacing the missing values with the means in the merged-in data.
 
 ```r
 activity_imputed <- merge(activity, steps_per_interval_avgdoveralldays, by.x = 'interval', by.y = 'interval')

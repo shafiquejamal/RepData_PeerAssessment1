@@ -275,7 +275,7 @@ number_of_missing_values
 <pre><code>## [1] 2304
 </code></pre>
 
-<h4>New dataset: Replace missing values with the mean for that interval</h4>
+<h4>New dataset: Replace missing values with the mean over all days for that interval. I do this by merging in the dataset from the previous step, and replacing the missing values with the means in the merged-in data.</h4>
 
 <pre><code class="r">activity_imputed &lt;- merge(activity, steps_per_interval_avgdoveralldays, by.x = &#39;interval&#39;, by.y = &#39;interval&#39;)
 activity_imputed &lt;- activity_imputed[order(activity_imputed$date),]
